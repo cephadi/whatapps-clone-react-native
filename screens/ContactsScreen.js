@@ -4,10 +4,11 @@ import ContactItem from '../components/contact/ContactItem'
 import { contacts } from '../utils/data'
 import { Entypo, FontAwesome } from '@expo/vector-icons'
 import colors from '../utils/colors'
+import FAB from '../components/ui/FAB'
 
 export default function ContactsScreen() {
     return (
-        <View>
+        <View style={{ flex: 1 }}>
             <View style={styles.topContainer}>
                 <Pressable
                     style={({ pressed }) => [
@@ -56,6 +57,7 @@ export default function ContactsScreen() {
                 keyExtractor={(item, index) => index}
                 renderItem={({ item }) => <ContactItem data={item} />}
             />
+            <FAB onPress={() => console.log('new contact')} icon="contacts" />
         </View>
     )
 }
